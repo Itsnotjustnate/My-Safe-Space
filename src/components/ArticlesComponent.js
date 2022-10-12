@@ -9,7 +9,7 @@ function Articles() {
                 well as vulnerabilities with big companies and corporations.
             </p>
             <p>For now we will have a link to The Hacker News.</p>
-            <a href="https://thehackernews.com" target="_blank" rel="noreferrer"> The Hacker News </a>
+            <a href="https://thehackernews.com" target="_blank" rel="noreferrer" className="article"> The Hacker News </a>
         </div>
     )
 }

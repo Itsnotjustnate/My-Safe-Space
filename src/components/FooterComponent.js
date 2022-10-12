@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../images/logo 1-1.png';
 
 function Footer (){
     return (
         <div className="Footer">
-            <p>our logo will go here</p>
+            <p>something goes here</p>
             <h5>
                 This website is intended to help users download and use the application MySafeSpace. <br/>
                 It is intended to be a free software for the use of anyone to use or contribute to. <br/>

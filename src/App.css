@@ -1,52 +1,347 @@
+/* general app adjustments */
 .App {
   min-height: 100vh;
   text-align: center;
 }
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
 
+/* Everything inside the header */
 .Header {
   margin: 0;
-  background-color: #282c34;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: white;
+  min-height: 15vh;
   color: white;
   padding-left: 5vh;
   padding-right: 5vh;
+}
+.logo {
+  height:96px;
+  width:176px;
 }
 .Navbar {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
   list-style: none;
+  padding: 0;
   padding-bottom: 2vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  opacity: 1;
 }
 
 .HeaderLink {
-  color: white;
+  color: #535353;
   text-decoration: none;
+  font-size: medium;
 }
 
+.HeaderLink:hover {
+  color: purple;
+}
+
+.DownloadButton {
+  color: #535353;
+  height: 50px;
+  width: 150px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition-duration: 0.4s;
+}
+
+.DownloadButton:hover {
+  background-color: rgb(62, 102, 232);
+  color: white;
+  cursor: grab;
+}
+
+/* All css related to the main section of the code */
 .Main {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding-left: 5vh;
   padding-right: 5vh;
-  min-height: 70vh;
+  min-height: 80vh;
+  align-items: center;
 }
 
 .Introduction {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*Home Main Page*/
+.welcome {
+  width: 75ch;
+}
+/*Downloads Main Page*/
+.VersionList {
+  display:flex;
+  width: 80%;
+  flex-direction: column;
 }
 
-.Person {
+.Version {
   display: flex;
   flex-direction: row;
+  height: 15px;
+  width: 100%;
+  margin: 20px;
+  padding: 0px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+  border-width: 2px;
+  transition-duration: 0.4s;
 }
+
+.Version:hover {
+  background-color: white;
+  border-color: #535353;
+  color: black;
+  cursor: grab;
+}
+/*About Us Main Page*/
+.People {
+  display: grid;
+}
+/*
+.Person {
+  height: 300px;
+  width: 300px;
+}
+*/
+.Person_1{
+  grid-column: 1;
+  grid-row: 1;
+  color: white;
+  background-image: url(images/person_1.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+.Person_1:hover,
+.Person_2:hover,
+.Person_3:hover,
+.Person_4:hover,
+.Person_5:hover,
+.Person_6:hover {
+  transform: scale(1.2);
+}
+.Person_2{
+  grid-column: 2;
+  grid-row: 1;
+  color: white;
+  background-image: url(images/person_4.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+.Person_3{
+  grid-column: 3;
+  grid-row: 1;
+  color: white;
+  background-image: url(images/person_3.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+.Person_4{
+  grid-column: 1;
+  grid-row: 2;
+  color: white;
+  background-image: url(images/person_4.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+.Person_5{
+  grid-column: 2;
+  grid-row: 2;
+  color: white;
+  background-image: url(images/person_4.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+
+.Person_6{
+  grid-column: 3;
+  grid-row: 2;
+  color: white;
+  background-image: url(images/person_3.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 5px;
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+
+.Person_Info{
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(hsl(0 0% 0% / 0.1),hsl(0 0% 0% / 0.3),hsl(0 0% 0% / 1)); 
+  transform: translateY(75%);
+  transition: transform 500ms ease;
+}
+
+.Person_1:hover .Person_Info,
+.Person_2:hover .Person_Info,
+.Person_3:hover .Person_Info,
+.Person_4:hover .Person_Info,
+.Person_5:hover .Person_Info,
+.Person_6:hover .Person_Info {
+  transform: translateY(0);
+  transition-delay: 500ms;
+}
+
+.Person_Info > *:not(.Name) {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+
+.Person_1:hover .Person_Info > *:not(.Name),
+.Person_2:hover .Person_Info > *:not(.Name),
+.Person_3:hover .Person_Info > *:not(.Name),
+.Person_4:hover .Person_Info > *:not(.Name),
+.Person_5:hover .Person_Info > *:not(.Name),
+.Person_6:hover .Person_Info > *:not(.Name) {
+  opacity: 1;
+  transition-delay: 1000ms;
+}
+
+.Name {
+  position: relative;
+  width: max-content;
+  color: white;
+}
+
+.Name::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: calc(100% + var(--padding));
+  left: calc(var(--padding) * -1);
+  bottom: -4px;
+  background: blue;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+
+.Person_1:hover .Name::after,
+.Person_2:hover .Name::after,
+.Person_3:hover .Name::after,
+.Person_4:hover .Name::after,
+.Person_5:hover .Name::after,
+.Person_6:hover .Name::after {
+  transform: scaleX(1);
+}
+
+.Button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(62, 102, 232);
+  padding: 0.5em 1.25em;
+  margin: 10px 20px;
+  border-radius: 0.25rem;
+}
+
+.Button:hover,
+.Button:focus {
+  background-color: white;
+  color: rgb(62, 102, 232);
+}
+
+/*Docs Main Page*/
+.Docs {
+  margin: 0;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Anchors {
+  display: flex;
+  position: fixed;
+  left: 5vh;
+  top: 20vh;
+}
+
+.Documentation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 75ch;
+}
+.marker_title {
+  display: flex;
+  margin: 10px;
+  font-weight: bold;
+}
+.markers {
+  display: flex;
+  margin: 10px;
+  font-size: small;
+}
+.marker_text {
+  text-decoration: none;
+}
+
+.section {
+  height:50vh;
+  padding-top:15vh;
+  width: 70ch;
+  text-align: baseline;
+}
+
+/*Articles Main Page*/
+.article {
+  text-decoration: none;
+  }
+/* All the code for anything that goes into the footer */
 .Footer {
   margin: 0;
-  background-color: #282c34;
+  background-color: #535353;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
